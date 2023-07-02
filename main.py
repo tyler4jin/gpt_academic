@@ -200,7 +200,7 @@ def main():
             rad = RealtimeAudioDistribution()
             def deal_audio(audio, cookies):
                 rad.feed(cookies['uuid'].hex, audio)
-            audio_mic.stream(deal_audio, inputs=[audio_mic, cookies])
+            audio_mic.stream(deal_audio, inputs=[audio_mic, cookies], every=0.1)
 
     # gradio的inbrowser触发不太稳定，回滚代码到原始的浏览器打开函数
     def auto_opentab_delay():
